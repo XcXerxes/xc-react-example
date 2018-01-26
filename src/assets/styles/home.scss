@@ -1,0 +1,50 @@
+@import './variable';
+@import './mixin';
+
+.example-home__form {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  .home-form__body {
+    flex:1;
+    @at-root {
+      .home-form__title {
+        @include flexbox;
+        padding: 10px 20px;
+        h3 {
+          color: $base_primary_color;
+        }
+      }
+      .home-form__item {
+        @include flexbox;
+        background-color: #fff;
+        position: relative;
+        padding: 20px;
+        span {
+          color: rgb(48, 48, 48);
+        }
+        .home-form__input {
+          flex: 1;
+          border: none;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          right: 0;
+          height: 4px;
+          transform: scaleY(.5);
+          background-color: rgba(204, 204, 204, 0.452);
+        }
+        &:last-child {
+          &::after {
+            content: '';
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+}

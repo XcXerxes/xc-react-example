@@ -1,0 +1,10 @@
+$justify: flex-start;
+$align: center;
+
+
+// flexbox布局
+@mixin flexbox ($justify: $justify, $align: $align){
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

@@ -84,3 +84,15 @@ em, i {
   height: 80px;
   font-size: 32px;
 }
+.btn-default {
+  width: 240px;
+  height: 80px;
+  border: none;
+  margin: auto;
+  background-color: $base_bg_color;
+  color: #fff;
+  font-size: inherit;
+  &:active {
+    background-color: rgba($base_bg_color, .8);
+  }
+}

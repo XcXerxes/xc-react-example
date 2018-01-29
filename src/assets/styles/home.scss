@@ -21,6 +21,11 @@
         background-color: #fff;
         position: relative;
         padding: 20px;
+        &.form-item__product {}
+        p {
+          color: rgb(48, 48, 48);
+          margin: 0 auto;
+        }
         span {
           color: rgb(48, 48, 48);
         }

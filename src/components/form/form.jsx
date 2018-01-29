@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 class HomeForm extends Component {
   constructor (...args) {
@@ -12,6 +13,7 @@ class HomeForm extends Component {
     this.props.submit()
   }
   render () {
+    const {formData} = this.props
     return (
       <div className="example-home__form">
         <div className="home-form__body">
@@ -21,16 +23,24 @@ class HomeForm extends Component {
           <div className="home-form__content">
             <div className="home-form__item">
               <span>销售金额：</span>
-              <input placeholder="请输入金额" type="number" value={this.props.orderSum}  pattern="[0-9]*" className="home-form__input input-noLine" onChange={this.handleInput.bind(this, 'orderSum')} />
+              <input placeholder="请输入金额" type="number" value={formData.orderSum}  pattern="[0-9]*" className="home-form__input input-noLine" onChange={this.handleInput.bind(this, 'orderSum')} />
             </div>
             <div className="home-form__item">
               <span>客户姓名：</span>
-              <input placeholder="请输入姓名" value={this.props.name} className="home-form__input input-noLine" onChange={this.handleInput.bind(this, 'name')} />
+              <input placeholder="请输入姓名" value={formData.name} className="home-form__input input-noLine" onChange={this.handleInput.bind(this, 'name')} />
             </div>
             <div className="home-form__item">
             <span>客户电话：</span>
-              <input placeholder="请输入电话" type="tel"  value={this.props.phoneNo} className="home-form__input input-noLine" onChange={this.handleInput.bind(this, 'phoneNo')} />
+              <input placeholder="请输入电话" type="tel"  value={formData.phoneNo} className="home-form__input input-noLine" onChange={this.handleInput.bind(this, 'phoneNo')} />
             </div>
+          </div>
+          <div className="home-form__title">
+            <h3>请选择商品</h3>
+          </div>
+          <div className="home-form__content">
+            <Link to="/" className="home-form__item form-item__product">
+              <p>请选择商品</p>
+            </Link>
           </div>
         </div>
         <div className="home-form__footer">

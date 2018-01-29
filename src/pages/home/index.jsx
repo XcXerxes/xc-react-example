@@ -26,7 +26,7 @@ class Home extends Component {
         <PublicHeader {...headerInfo} />
         <div className="example-wrapper">
           <HomeForm submit={this.formSubmit.bind(this)} changeHandle={(value, type) => this.inputHandle(value, type)}
-          {...this.props.formData} />
+          {...this.props} />
         </div>
       </main>
     )

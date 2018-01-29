@@ -38,7 +38,7 @@ class HomeForm extends Component {
             <h3>请选择商品</h3>
           </div>
           <div className="home-form__content">
-            <Link to="/" className="home-form__item form-item__product">
+            <Link to="/products" className="home-form__item form-item__product">
               <p>请选择商品</p>
             </Link>
           </div>

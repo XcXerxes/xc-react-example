@@ -1,0 +1,49 @@
+@import './variable';
+@import './mixin.scss';
+.products-wrapper {
+  margin-top: 20px;
+  background-color: #fff;
+
+  .products-item {
+    display: flex;
+    padding: 0 20px;
+    height: 120px;
+    align-items: center;
+    position: relative;
+    i {
+      font-size: 50px;
+      color: #ccc;
+      cursor: pointer;
+      &.is-active {
+        color: $base_primary_color;
+      }
+    }
+    &::after {
+      @include border-1px;
+    }
+    @at-root {
+      .products-item__left, .products-item__right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        i {
+          font-size: 45px;
+        }
+        span {
+          color: #333;
+          margin: 0 10px;
+        }
+      }
+      .products-item__middle {
+        flex: 1;
+        text-align: left;
+        height: 100%;
+        line-height: 120px;
+        margin-left: 20px;
+        h3 {
+          color: #333;
+        }
+      }
+    }
+  }
+}

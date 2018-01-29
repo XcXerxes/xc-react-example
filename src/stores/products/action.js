@@ -1,5 +1,21 @@
 import * as types from './action-type'
-import index from '../../pages/home/index';
+import api from '@/api'
+
+// 获取数据
+export const getProducts = () => {
+  return async dispatch => {
+    try {
+      const data = await api.getProducts()
+      debugger
+      dispatch({
+        type: types.GET_PRODUCT,
+        dataList: data
+      })
+    } catch (error) {
+      console.error(error)
+    }
+  }
+}
 
 // 选择商品
 export const toggleProduct = (index) => {

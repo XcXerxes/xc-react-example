@@ -8,3 +8,14 @@ $align: center;
   justify-content: $justify;
   align-items: $align;
 }
+// 下边框
+@mixin border-1px ($bgColor: rgba(204, 204, 204, 0.452)) {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transform: scaleY(.5);
+  background-color: $bgColor;
+}

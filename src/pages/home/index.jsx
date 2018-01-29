@@ -23,7 +23,9 @@ class Home extends Component {
     const headerInfo = {title: '首页', isRight: true}
     return (
       <main>
-        <PublicHeader {...headerInfo} />
+        <PublicHeader {...headerInfo}>
+          <i className="icon-jilu example-header__jilu"></i>
+        </PublicHeader>
         <div className="example-wrapper">
           <HomeForm submit={this.formSubmit.bind(this)} changeHandle={(value, type) => this.inputHandle(value, type)}
           {...this.props} />

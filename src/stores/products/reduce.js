@@ -27,7 +27,7 @@ export const proData = (state = initState, action) => {
       })
       return [...state, ...array]
     case types.TOGGLE_PRODUCT:
-      const proList = _.map(state.dataList, (item, index) => {
+      const proList = _.map(state, (item, index) => {
         if (index === action.index) {
           return _.assign({}, item, {
             selectStatus: !item.selectStatus
@@ -35,11 +35,17 @@ export const proData = (state = initState, action) => {
         }
         return item
       })
-      return [...state, ...proList]
-    // case types.MODIFY_PRODUCT:
-    //   const array = _.map(state.dataList, item => {
-
-    //   })
+      return proList
+    case types.MODIFY_PRODUCT:
+      const current = _.map(state, (item, index) => {
+        if (index === action.index) {
+          return _.assign({}, item, {
+            selectNum: action.selectNum
+          })
+        }
+        return item
+      })
+      return current
     case types.CLEAR_PRODUCT:
       return []
     default:

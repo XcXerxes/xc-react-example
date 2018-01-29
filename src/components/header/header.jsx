@@ -10,7 +10,7 @@ const PublicHeader = (props) => {
         <span>{props.title}</span>
       </div>
       {props.isRight && <div className="example-header__right">
-        <i className="icon-jilu example-header__jilu"></i>
+        {props.children}
       </div>}
     </div>
   )

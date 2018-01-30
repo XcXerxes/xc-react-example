@@ -6,6 +6,7 @@ import store from '@/stores'
 import Route from './router'
 import './index.scss'
 import registerServiceWorker from './registerServiceWorker';
+window._ = require('lodash')
 
 const render = Component => {
   console.log(Component)

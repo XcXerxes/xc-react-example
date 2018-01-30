@@ -13,7 +13,21 @@ class HomeForm extends Component {
     this.props.submit()
   }
   render () {
-    const {formData} = this.props
+    debugger
+    const {formData, proData} = this.props
+    const selectProData = proData.filter(item => item.selectNum > 0 && item.selectStatus)
+    let list
+    if (selectProData.length > 0) {
+      list = selectProData.map((item, index) => {
+        return (
+          <div key={index} className="form-product__item">
+            {item.product_name} X <span>{item.selectNum}</span>
+          </div>
+        )
+      })
+    } else {
+      list = <p>请选择商品</p>
+    }
     return (
       <div className="example-home__form">
         <div className="home-form__body">
@@ -39,7 +53,7 @@ class HomeForm extends Component {
           </div>
           <div className="home-form__content">
             <Link to="/products" className="home-form__item form-item__product">
-              <p>请选择商品</p>
+              {list}
             </Link>
           </div>
         </div>

@@ -3,8 +3,7 @@ import * as types from './action-type'
 let initState = {
   orderSum: '', // 金额
   name: '', // 姓名
-  phoneNo: '', // 手机号
-  imgpath: '' // 图片地址
+  phoneNo: '' // 手机号
 }
 // 首页表单数据
 export const formData = (state = initState, action) => {

@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { saveFormData, clearData} from '@/stores/home/action'
+import {clearProduct} from '@/stores/products/action'
 import PublicHeader from '@/components/header/header'
 import HomeForm from '@/components/form/form'
+import _ from 'lodash'
 
 class Home extends Component {
   constructor (props) {
@@ -13,7 +15,12 @@ class Home extends Component {
     this.props.saveFormData(event.target.value, type)
   }
   formSubmit = () => {
-    console.log('submit')
+    const currentList = this.props.proData.filter(item => item.selectNum > 0 && item.selectStatus)
+    if (_.size(_.omitBy(this.props.formData, item => !item)) === 3 && currentList.length > 0) {
+      alert('提交成功！')
+      this.props.clearData()
+      this.props.clearProduct()
+    }
   }
   inputHandle = (value, type) => {
     this.props.saveFormData(value, type)
@@ -35,5 +42,6 @@ class Home extends Component {
   }
 }
 export default connect(state => ({
-  formData: state.formData
-}), {saveFormData, clearData})(Home)
+  formData: state.formData,
+  proData: state.proData
+}), {saveFormData, clearData, clearProduct})(Home)

@@ -21,6 +21,16 @@
         background-color: #fff;
         position: relative;
         padding: 20px;
+        flex-wrap: wrap;
+        .form-product__item {
+          color: #333;
+          margin: 10px 0;
+          padding-right: 10px;
+          flex: 1 0 50%;
+          span {
+            color: $base_primary_color;
+          }
+        }
         &.form-item__product {}
         p {
           color: rgb(48, 48, 48);

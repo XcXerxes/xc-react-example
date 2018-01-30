@@ -6,7 +6,6 @@ export const getProducts = () => {
   return async dispatch => {
     try {
       const data = await api.getProducts()
-      debugger
       dispatch({
         type: types.GET_PRODUCT,
         dataList: data
